@@ -20,6 +20,7 @@ public class Solver {
 
         while(!queue.isEmpty()){
             MazeField currentField = queue.poll();
+            if(currentField.getCharacter().equals(Maze.TARGET_POSITION_CHAR)) break;
             currentField.setProcessed(true);
             updateNeighbours(maze, currentField);
         }
@@ -42,6 +43,5 @@ public class Solver {
             }
         }
     }
-
 
 }
